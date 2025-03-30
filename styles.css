@@ -170,6 +170,10 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
+.instagram-icon {
+    width: 50px; 
+    height: auto;
+}
 
 button:hover {
     background-color: #555;
