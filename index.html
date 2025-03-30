@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Путівник</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="places.html">Місця</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="#" id="openModal">Вхід</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="title">Ласкаво просимо до путівника!</h1>
+            <p>Тут ви знайдете найкращі туристичні місця.</p>
+            <img src="travel.jpg" alt="Подорож">
+            <br>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Вхід</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Увійти</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("openModal").addEventListener("click", function() {
+            document.getElementById("modal").style.display = "block";
+        });
+
+        document.querySelector(".close").addEventListener("click", function() {
+            document.getElementById("modal").style.display = "none";
+        });
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("modal")) {
+                document.getElementById("modal").style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
