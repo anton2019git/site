@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <style>
+        /* Основні стилі для модального вікна */
         .modal {
-            display: none; 
+            display: none; /* Сховано за замовчуванням */
             position: fixed;
-            z-index: 1; 
+            z-index: 1; /* Вивести модальне вікно поверх всього */
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); 
+            background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
         }
 
         .modal-content {
@@ -24,7 +25,7 @@
             padding: 20px;
             border: 1px solid #888;
             width: 30%;
-            text-align: center; 
+            text-align: center; /* Вирівнювання тексту по центру */
             border-radius: 8px;
         }
 
@@ -43,6 +44,7 @@
             color: black;
         }
 
+        /* Стиль для кнопок */
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -58,20 +60,34 @@
             background-color: #45a049;
         }
 
+        /* Вирівнювання полів вводу по центру */
         input {
             padding: 10px;
-            width: 80%; 
-            margin: 10px auto; 
+            width: 80%; /* Ширина полів вводу 80% */
+            margin: 10px auto; /* Автоматичний відступ з боків для центрування */
             margin-top: 5px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            display: block; 
+            display: block; /* Для того, щоб вони стали блоковими елементами */
         }
 
+        /* Іконка Instagram */
         .instagram-icon {
             width: 40px;
             height: 40px;
             margin-top: 20px;
+        }
+
+        /* Перемикання між формами */
+        .toggle-link {
+            margin-top: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .toggle-link:hover {
+            color: #45a049;
         }
     </style>
 </head>
@@ -97,37 +113,73 @@
             </a>
         </section>
     </main>
-    
+
+    <!-- Модальне вікно -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Вхід</h2>
-            <form>
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                <label for="password">Пароль:</label>
-                <input type="password" id="password" required>
-                <button type="submit">Увійти</button>
-            </form>
+            <h2 id="modal-title">Вхід</h2>
+
+            <!-- Форма входу -->
+            <div id="login-form">
+                <form>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" required>
+                    <button type="submit">Увійти</button>
+                </form>
+                <p>Ще не зареєстровані? <span class="toggle-link" id="show-register">Реєстрація</span></p>
+            </div>
+
+            <!-- Форма реєстрації -->
+            <div id="register-form" style="display: none;">
+                <form>
+                    <label for="new-email">Email:</label>
+                    <input type="email" id="new-email" required>
+                    <label for="new-password">Пароль:</label>
+                    <input type="password" id="new-password" required>
+                    <button type="submit">Зареєструватися</button>
+                </form>
+                <p>Вже маєте акаунт? <span class="toggle-link" id="show-login">Вхід</span></p>
+            </div>
         </div>
     </div>
 
     <script>
+        // Відкриття модального вікна
         document.getElementById("openModal").addEventListener("click", function() {
             document.getElementById("modal").style.display = "block";
         });
 
+        // Закриття модального вікна
         document.querySelector(".close").addEventListener("click", function() {
             document.getElementById("modal").style.display = "none";
         });
 
+        // Закриття при натисканні на фон
         window.onclick = function(event) {
             if (event.target == document.getElementById("modal")) {
                 document.getElementById("modal").style.display = "none";
             }
         };
+
+        // Перемикання між формами входу та реєстрації
+        document.getElementById("show-register").addEventListener("click", function() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("register-form").style.display = "block";
+            document.getElementById("modal-title").textContent = "Реєстрація";
+        });
+
+        document.getElementById("show-login").addEventListener("click", function() {
+            document.getElementById("register-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("modal-title").textContent = "Вхід";
+        });
     </script>
 </body>
+</html>
+
 </html>
 
 
