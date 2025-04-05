@@ -1,112 +1,108 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Путівник</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <style>
-        .modal {
-            display: none; 
-            position: fixed;
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); 
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%;
-            text-align: center; 
-            border-radius: 8px;
-        }
-
-        .close {
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            position: absolute;
-            right: 15px;
-            top: 10px;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-top: 10px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        input {
-            padding: 10px;
-            width: 80%; 
-            margin: 10px auto;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            display: block; 
-        }
-
-        .instagram-icon {
-            width: 40px;
-            height: 40px;
-            margin-top: 20px;
-        }
-
-        .toggle-link {
-            margin-top: 10px;
-            color: #4CAF50;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .toggle-link:hover {
-            color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="places.html">Місця</a></li>
-                <li><a href="#" id="openModal">Вхід</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h1 class="title">Ласкаво просимо до путівника!</h1>
-            <p>Тут ви знайдете найкращі туристичні місця Ужгорода</p>
-            <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Путівник</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
   <style>
     body {
       background-color: #f2f2f2;
       font-family: Arial, sans-serif;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      background-color: #4CAF50;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); 
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 50%;
+      text-align: center; 
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    input {
+      padding: 10px;
+      width: 80%; 
+      margin: 10px auto;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      display: block; 
+    }
+
+    .instagram-icon {
+      width: 40px;
+      height: 40px;
+      margin-top: 20px;
+    }
+
+    .toggle-link {
+      margin-top: 10px;
+      color: #4CAF50;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .toggle-link:hover {
+      color: #45a049;
     }
 
     .carousel {
@@ -138,13 +134,63 @@
 </head>
 <body>
 
-  <div class="carousel" id="carousel">
-    <div class="carousel-track-wrapper">
-      <div class="carousel-track">
-        <img src="https://picsum.photos/id/1015/600/400" class="carousel-image" alt="Image 1">
-        <img src="https://picsum.photos/id/1016/600/400" class="carousel-image" alt="Image 2">
-        <img src="https://picsum.photos/id/1018/600/400" class="carousel-image" alt="Image 3">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgPB1y_2NhYXKwhTfpGYCS5A600ojrKimFg&s" class="carousel-image" alt="Image 4">
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="places.html">Місця</a></li>
+        <li><a href="#" id="openModal">Вхід</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1 class="title">Ласкаво просимо до путівника!</h1>
+      <p>Тут ви знайдете найкращі туристичні місця Ужгорода</p>
+
+      <div class="carousel" id="carousel">
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track">
+            <img src="https://picsum.photos/id/1015/700/500" class="carousel-image" alt="Image 1">
+            <img src="https://picsum.photos/id/1016/700/500" class="carousel-image" alt="Image 2">
+            <img src="https://picsum.photos/id/1018/700/500" class="carousel-image" alt="Image 3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgPB1y_2NhYXKwhTfpGYCS5A600ojrKimFg&s" class="carousel-image" alt="Image 4">
+          </div>
+        </div>
+      </div>
+
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/512px-Instagram_logo_2022.svg.png" alt="Instagram" class="instagram-icon">
+      </a>
+    </section>
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title">Вхід</h2>
+
+      <div id="login-form">
+        <form>
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" required>
+          <button type="submit">Увійти</button>
+        </form>
+        <p>Ще не зареєстровані? <span class="toggle-link" id="show-register">Реєстрація</span></p>
+      </div>
+
+      <div id="register-form" style="display: none;">
+        <form>
+          <label for="new-email">Email:</label>
+          <input type="email" id="new-email" required>
+          <label for="new-password">Пароль:</label>
+          <input type="password" id="new-password" required>
+          <button type="submit">Зареєструватися</button>
+        </form>
+        <p>Вже маєте акаунт? <span class="toggle-link" id="show-login">Вхід</span></p>
       </div>
     </div>
   </div>
@@ -175,78 +221,34 @@
     }
 
     startAutoSlide();
-
     carousel.addEventListener('mouseenter', stopAutoSlide);
     carousel.addEventListener('mouseleave', startAutoSlide);
+
+    document.getElementById("openModal").addEventListener("click", function () {
+      document.getElementById("modal").style.display = "block";
+    });
+
+    document.querySelector(".close").addEventListener("click", function () {
+      document.getElementById("modal").style.display = "none";
+    });
+
+    window.onclick = function (event) {
+      if (event.target == document.getElementById("modal")) {
+        document.getElementById("modal").style.display = "none";
+      }
+    };
+
+    document.getElementById("show-register").addEventListener("click", function () {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("register-form").style.display = "block";
+      document.getElementById("modal-title").textContent = "Реєстрація";
+    });
+
+    document.getElementById("show-login").addEventListener("click", function () {
+      document.getElementById("register-form").style.display = "none";
+      document.getElementById("login-form").style.display = "block";
+      document.getElementById("modal-title").textContent = "Вхід";
+    });
   </script>
-
-</body>
-            <br>
-            <a href="https://www.instagram.com" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/512px-Instagram_logo_2022.svg.png" alt="Instagram" class="instagram-icon">
-            </a>
-        </section>
-    </main>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title">Вхід</h2>
-
-            <div id="login-form">
-                <form>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" required>
-                    <label for="password">Пароль:</label>
-                    <input type="password" id="password" required>
-                    <button type="submit">Увійти</button>
-                </form>
-                <p>Ще не зареєстровані? <span class="toggle-link" id="show-register">Реєстрація</span></p>
-            </div>
-
-            <div id="register-form" style="display: none;">
-                <form>
-                    <label for="new-email">Email:</label>
-                    <input type="email" id="new-email" required>
-                    <label for="new-password">Пароль:</label>
-                    <input type="password" id="new-password" required>
-                    <button type="submit">Зареєструватися</button>
-                </form>
-                <p>Вже маєте акаунт? <span class="toggle-link" id="show-login">Вхід</span></p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById("openModal").addEventListener("click", function() {
-            document.getElementById("modal").style.display = "block";
-        });
-
-        document.querySelector(".close").addEventListener("click", function() {
-            document.getElementById("modal").style.display = "none";
-        });
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("modal")) {
-                document.getElementById("modal").style.display = "none";
-            }
-        };
-
-        document.getElementById("show-register").addEventListener("click", function() {
-            document.getElementById("login-form").style.display = "none";
-            document.getElementById("register-form").style.display = "block";
-            document.getElementById("modal-title").textContent = "Реєстрація";
-        });
-
-        document.getElementById("show-login").addEventListener("click", function() {
-            document.getElementById("register-form").style.display = "none";
-            document.getElementById("login-form").style.display = "block";
-            document.getElementById("modal-title").textContent = "Вхід";
-        });
-    </script>
 </body>
 </html>
-
-</html>
-
-
