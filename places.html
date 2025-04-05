@@ -78,5 +78,32 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById("openModal").addEventListener("click", function() {
+            document.getElementById("modal").style.display = "block";
+        });
+
+        document.querySelector(".close").addEventListener("click", function() {
+            document.getElementById("modal").style.display = "none";
+        });
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("modal")) {
+                document.getElementById("modal").style.display = "none";
+            }
+        };
+
+        document.getElementById("show-register").addEventListener("click", function() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("register-form").style.display = "block";
+            document.getElementById("modal-title").textContent = "Реєстрація";
+        });
+
+        document.getElementById("show-login").addEventListener("click", function() {
+            document.getElementById("register-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("modal-title").textContent = "Вхід";
+        });
+    </script>
 </body>
 </html>
