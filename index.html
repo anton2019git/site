@@ -101,7 +101,87 @@
         <section>
             <h1 class="title">Ласкаво просимо до путівника!</h1>
             <p>Тут ви знайдете найкращі туристичні місця Ужгорода</p>
-            <img src="https://pravdaye.com.ua/wp-content/uploads/2023/03/a18.jpg" alt="Подорож">
+            <head>
+  <meta charset="UTF-8">
+  <title>Карусель изображений</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    .carousel {
+      width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-track-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-image {
+      width: 600px;
+      height: 400px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-track-wrapper">
+      <div class="carousel-track">
+        <img src="https://picsum.photos/id/1015/600/400" class="carousel-image" alt="Image 1">
+        <img src="https://picsum.photos/id/1016/600/400" class="carousel-image" alt="Image 2">
+        <img src="https://picsum.photos/id/1018/600/400" class="carousel-image" alt="Image 3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgPB1y_2NhYXKwhTfpGYCS5A600ojrKimFg&s" class="carousel-image" alt="Image 4">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const carousel = document.getElementById('carousel');
+    let currentIndex = 0;
+    let intervalId;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].clientWidth;
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    function autoSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }
+
+    function startAutoSlide() {
+      intervalId = setInterval(autoSlide, 3000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(intervalId);
+    }
+
+    startAutoSlide();
+
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
+  </script>
+
+</body>
             <br>
             <a href="https://www.instagram.com" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/512px-Instagram_logo_2022.svg.png" alt="Instagram" class="instagram-icon">
