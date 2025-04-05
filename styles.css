@@ -177,7 +177,7 @@ button {
 button:hover {
     background-color: #555;
 }
-.modal {
+.modal1 {
     display: none;
     position: fixed;
     z-index: 1;
@@ -188,7 +188,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {
+.modal-content1 {
     background-color: white;
     margin: 10% auto;
     padding: 20px;
@@ -197,7 +197,7 @@ button:hover {
     text-align: center;
 }
 
-.close {
+.close1 {
     float: right;
     font-size: 24px;
     cursor: pointer;
@@ -264,7 +264,7 @@ img {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.modal {
+.modal1 {
     display: none;
     position: fixed;
     z-index: 1;
@@ -275,7 +275,7 @@ img {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {
+.modal-content1 {
     background-color: white;
     margin: 10% auto;
     padding: 20px;
@@ -284,7 +284,7 @@ img {
     text-align: center;
 }
 
-.close {
+.close1 {
     float: right;
     font-size: 24px;
     cursor: pointer;
