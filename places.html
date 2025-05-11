@@ -5,10 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Місця Ужгорода</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        .place-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .place-modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 50%;
+            text-align: center;
+        }
+
+        .place-close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .place-image {
+            width: 80%;
+            max-width: 700px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
+            <h1 style="display: inline-block; color: white; font-size: 24px; font-weight: bold;">
+                <img src="path-to-your-gif.gif" alt="Логотип Путівник" class="logo"> <!-- GIF 64x64 -->
+                Путівник
+            </h1>
             <ul>
                 <li><a href="index.html">Головна</a></li>
                 <li><a href="places.html">Місця</a></li>
@@ -22,39 +70,74 @@
         
         <section>
             <h2>Ужгородський замок</h2>
-            <img src="https://inside-ua.com/files/originals/uzhhorodskyi-zamok-1.webp" alt="Замок Ужгород">
-            <p>Середньовічний замок, одна з головних пам'яток міста.</p>
+            <img src="https://inside-ua.com/files/originals/uzhhorodskyi-zamok-1.webp" alt="Замок Ужгород" class="place-image" data-modal="modal-castle">
         </section>
 
         <section>
             <h2>Корзо</h2>
-            <img src="https://itinery.com.ua/img/objects/object_20171107_220617.jpg" alt="Вулиця Корзо">
-            <p>Головна пішохідна вулиця міста, відома своєю атмосферою та кафе.</p>
+            <img src="https://itinery.com.ua/img/objects/object_20171107_220617.jpg" alt="Вулиця Корзо" class="place-image" data-modal="modal-korzo">
         </section>
 
         <section>
             <h2>Липова алея</h2>
-            <img src="https://tourinform.org.ua/wp-content/uploads/2013/05/lypy-uzhhorod.jpg" alt="Липова алея">
-            <p>Найдовша в Європі липова алея, чудове місце для прогулянок.</p>
+            <img src="https://tourinform.org.ua/wp-content/uploads/2013/05/lypy-uzhhorod.jpg" alt="Липова алея" class="place-image" data-modal="modal-linden">
         </section>
 
         <section>
             <h2>Ботанічний сад УжНУ</h2>
-            <img src="https://we.org.ua/wp-content/uploads/2014/10/ecaa226548b13ffe6ba6e6e9449b9554.jpg" alt="Ботанічний сад">
-            <p>Місце, де можна насолодитися природою та рідкісними рослинами.</p>
+            <img src="https://we.org.ua/wp-content/uploads/2014/10/ecaa226548b13ffe6ba6e6e9449b9554.jpg" alt="Ботанічний сад" class="place-image" data-modal="modal-botanical">
         </section>
 
         <section>
             <h2>Міні-скульптури Ужгорода</h2>
-            <img src="https://zaktour.gov.ua/wp-content/uploads/2024/03/shvejk-1.jpg" alt="Міні-скульптури">
-            <p>У місті встановлено понад 40 міні-скульптур, кожна з яких має свою унікальну історію.</p>
+            <img src="https://zaktour.gov.ua/wp-content/uploads/2024/03/shvejk-1.jpg" alt="Міні-скульптури" class="place-image" data-modal="modal-sculptures">
         </section>
     </main>
-        <div id="modal1" class="modal1">
-        <div class="modal-content1">
-            <span class="close1">&times;</span>
-            <h2 id="modal-title">Вхід</h2>
 
+    <div id="modal-castle" class="place-modal">
+        <div class="place-modal-content">
+            <span class="place-close">×</span>
+            <h2>Ужгородський замок</h2>
+            <p>Середньовічний замок, одна з головних пам'яток міста. Збудований у X-XI століттях, він слугував фортецею для захисту регіону. Сьогодні тут розташований краєзнавчий музей.</p>
+        </div>
+    </div>
+
+    <div id="modal-korzo" class="place-modal">
+        <div class="place-modal-content">
+            <span class="place-close">×</span>
+            <h2>Корзо</h2>
+            <p>Головна пішохідна вулиця міста, відома своєю атмосферою та кафе. Назва походить від італійського "corso" — прогулянка. Ідеальне місце для вечірнього відпочинку.</p>
+        </div>
+    </div>
+
+    <div id="modal-linden" class="place-modal">
+        <div class="place-modal-content">
+            <span class="place-close">×</span>
+            <h2>Липова алея</h2>
+            <p>Найдовша в Європі липова алея, чудове місце для прогулянок. Простягається вздовж набережної річки Уж і налічує сотні дерев, що цвітуть у травні-червні.</p>
+        </div>
+    </div>
+
+    <div id="modal-botanical" class="place-modal">
+        <div class="place-modal-content">
+            <span class="place-close">×</span>
+            <h2>Ботанічний сад УжНУ</h2>
+            <p>Місце, де можна насолодитися природою та рідкісними рослинами. Заснований у 1948 році, сад є частиною Ужгородського національного університету.</p>
+        </div>
+    </div>
+
+    <div id="modal-sculptures" class="place-modal">
+        <div class="place-modal-content">
+            <span class="place-close">×</span>
+            <h2>Міні-скульптури Ужгорода</h2>
+            <p>У місті встановлено понад 40 міні-скульптур, кожна з яких має свою унікальну історію. Вони присвячені відомим особистостям і подіям, наприклад, Швейку чи Моцарту.</p>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2 id="modal-title">Вхід</h2>
             <div id="login-form">
                 <form>
                     <label for="email">Email:</label>
@@ -65,7 +148,6 @@
                 </form>
                 <p>Ще не зареєстровані? <span class="toggle-link" id="show-register">Реєстрація</span></p>
             </div>
-
             <div id="register-form" style="display: none;">
                 <form>
                     <label for="new-email">Email:</label>
@@ -78,18 +160,23 @@
             </div>
         </div>
     </div>
+
     <script>
-        document.getElementById("openModal").addEventListener("click", function() {
-            document.getElementById("modal").style.display = "block";
+        const modal = document.getElementById("modal");
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.querySelector(".modal .close");
+
+        openModal.addEventListener("click", function() {
+            modal.style.display = "block";
         });
 
-        document.querySelector(".close").addEventListener("click", function() {
-            document.getElementById("modal").style.display = "none";
+        closeModal.addEventListener("click", function() {
+            modal.style.display = "none";
         });
 
         window.onclick = function(event) {
-            if (event.target == document.getElementById("modal")) {
-                document.getElementById("modal").style.display = "none";
+            if (event.target === modal) {
+                modal.style.display = "none";
             }
         };
 
@@ -103,6 +190,33 @@
             document.getElementById("register-form").style.display = "none";
             document.getElementById("login-form").style.display = "block";
             document.getElementById("modal-title").textContent = "Вхід";
+        });
+
+        const placeImages = document.querySelectorAll(".place-image");
+        const placeModals = document.querySelectorAll(".place-modal");
+        const placeCloses = document.querySelectorAll(".place-close");
+
+        placeImages.forEach(image => {
+            image.addEventListener("click", function() {
+                const modalId = this.getAttribute("data-modal");
+                const modal = document.getElementById(modalId);
+                modal.style.display = "block";
+            });
+        });
+
+        placeCloses.forEach(close => {
+            close.addEventListener("click", function() {
+                const modal = this.closest(".place-modal");
+                modal.style.display = "none";
+            });
+        });
+
+        window.addEventListener("click", function(event) {
+            placeModals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
         });
     </script>
 </body>
