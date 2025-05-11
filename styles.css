@@ -7,7 +7,7 @@ body {
 
 header {
     background: #333;
-    padding: 10px 0; /* Зменшено з 15px до 10px для тоншої смуги */
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -18,13 +18,13 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10px; /* Зменшено з 15px до 10px */
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 16px; /* Зменшено з 18px до 16px */
+    font-size: 18px;
 }
 
 .title {
